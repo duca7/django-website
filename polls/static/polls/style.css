@@ -1,0 +1,22 @@
+body {
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+}
+
+p {
+    font-size: 30px;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style-type: circle;
+    line-height: 25px;
+}
+
+li a {
+    font-size: 25px;
+    color: #ffffff;
+    text-decoration: none;
+}
