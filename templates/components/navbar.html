@@ -69,8 +69,9 @@
 				{% else %}
 					<div class="widget-header">
 						<small class="title text-muted">Welcome {{user.first_name}}</small>
+						<a href="{% url 'dashboard' %}">Dashboard</a> <span class="dark-transp"> | </span>
 						<a href="{% url 'logout' %}"> Logout</a>
-							{% comment %} <a href="#">Sign in</a> <span class="dark-transp"> | </span> {% endcomment %}
+						
 					</div>
 				{% endif %}
 					<a href="{% url 'cart' %}" class="widget-header pl-3 ml-3">
