@@ -1,11 +1,12 @@
 from carts.models import Cart, CartItem
-from store.models import Product
+from store.models import Product, Variation
 from django.shortcuts import get_object_or_404, redirect, render
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def _cart_id(request):
+
     cart = request.session.session_key
     if not cart:
         cart = request.session.create()
@@ -13,6 +14,19 @@ def _cart_id(request):
 
 
 def add_cart(request, product_id):
+    product = Product.objects.get(id=product_id)
+    if request.method == 'POST':
+        product_variation = []
+        for item in request.POST:
+            key = item
+            value = request.POST[key]
+
+            try:
+                variation = Variation.objects.get(product=product, variation_category__iexact=key, variation_value__iexact=value)
+                product_variation.append(variation)
+            except:
+                pass
+
     product = Product.objects.get(id=product_id)
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
