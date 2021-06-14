@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 import datetime
 from carts.models import CartItem
 
+<<<<<<< HEAD
 def place_order(request, total=0, quantity=0,):
     current_user = request.user
 
@@ -58,3 +59,5 @@ def place_order(request, total=0, quantity=0,):
             return render(request, 'orders/payments.html', context)
     else:
         return redirect('checkout')
+=======
+>>>>>>> parent of 17c8a2a (variation)
