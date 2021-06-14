@@ -7,7 +7,7 @@
 
 <!-- ============================ COMPONENT LOGIN   ================================= -->
 
-{% if request.GET.command == 'verification' %}
+{% comment %} {% if request.GET.command == 'verification' %}
 
 <div class="container mx-auto alert alert-info text-center" role="alert" style="max-width: 1024px; margin-top:100px;">
 Thank you for registering with us. We have sent you a verification email to your email address [{{ request.GET.email }}]
@@ -15,7 +15,7 @@ Thank you for registering with us. We have sent you a verification email to your
 Already verified? <a href="{% url 'login' %}">Login</a>
 </div>
 
-{% else %}
+{% else %} {% endcomment %}
 
 	<div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
 
@@ -45,7 +45,7 @@ Already verified? <a href="{% url 'login' %}">Login</a>
      <p class="text-center mt-4">Don't have account? <a href="{% url 'register' %}">Sign up</a></p>
      <br><br>
 <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
-{% endif %}
+{% comment %} {% endif %} {% endcomment %}
 
 </section>
 {% endblock %}
