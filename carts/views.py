@@ -15,8 +15,8 @@ def _cart_id(request):
 
 def add_cart(request, product_id):
     product = Product.objects.get(id=product_id)
+    product_variation = []
     if request.method == 'POST':
-        product_variation = []
         for item in request.POST:
             key = item
             value = request.POST[key]
@@ -38,6 +38,10 @@ def add_cart(request, product_id):
 
     try:
         cart_items = CartItem.objects.get(product=product, cart=cart)
+        if len(product_variation) > 0:
+            cart_items.variations.clear()
+            for item in product_variation:
+                cart_items.variations.add(item) 
         cart_items.quantity += 1
         cart_items.save()
 
@@ -47,7 +51,10 @@ def add_cart(request, product_id):
             quantity = 1,
             cart = cart,
         )
-
+        if len(product_variation) > 0:
+            cart_items.variations.clear()
+            for item in product_variation:
+                cart_items.variations.add(item) 
         cart_items.save()
     return redirect('cart')
 
