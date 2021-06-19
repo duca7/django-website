@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
 <!-- ========================= SECTION CONTENT ========================= -->
@@ -25,15 +27,15 @@
 		<article class="card">
 		<header class="card-header">
 			<strong class="d-inline-block mr-3">Order ID: 6123456789</strong>
-			<span>Order Date: 16 December 2018</span>
+			<span>Order Date: 16 June 2021</span>
 		</header>
 		<div class="card-body">
 			<div class="row"> 
 				<div class="col-md-8">
 					<h6 class="text-muted">Delivery to</h6>
 					<p>Michael Jackson <br>  
-					Phone +1234567890 Email: myname@pixsellz.com <br>
-			    	Location: Home number, Building name, Street 123,  Tashkent, UZB <br> 
+					Phone +1234567890 Email: myname@gmail.com <br>
+			    	Location: Home number, Building name, Street 123,  HoChiMinh <br> 
 			    	P.O. Box: 100123
 			 		</p>
 				</div>
@@ -54,7 +56,7 @@
 		<table class="table table-hover">
 			<tr>
 				<td width="65">
-					<img src="../images/items/1.jpg" class="img-xs border">
+					<img src="{% static 'images/items/1.jpg' %}" class="img-xs border">
 				</td>
 				<td> 
 					<p class="title mb-0">Product name goes here </p>
@@ -65,7 +67,7 @@
 			</tr>
 			<tr>
 				<td>
-					<img src="../images/items/2.jpg" class="img-xs border">
+					<img src="{% static 'images/items/2.jpg' %}" class="img-xs border">
 				</td>
 				<td> 
 					<p class="title mb-0">Another name goes here </p>
@@ -76,7 +78,7 @@
 			</tr>
 			<tr>
 				<td>
-					<img src="../images/items/3.jpg" class="img-xs border">
+					<img src="{% static 'images/items/3.jpg' %}" class="img-xs border">
 				</td>
 				<td> 
 					<p class="title mb-0">The name of the product  goes here </p>
